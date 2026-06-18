@@ -1,9 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import os
 
-DATABASE_URL = (
-    "postgresql://droneadmin:DroneAdmin123@127.0.0.1:5433/droneserver"
-)
+DATABASE_URL =  os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
